@@ -3,10 +3,10 @@ body {
     font-family: system-ui, sans-serif;
     background: radial-gradient(circle at top, #0b1a3a, #020412);
     color: #fff;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    place-content: center;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
     min-height: 100vh;
 }
 
