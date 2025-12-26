@@ -83,30 +83,3 @@ window.addEventListener('resize', () => {
   camera.aspect = newWidth / newHeight;
   camera.updateProjectionMatrix();
 });
-
-
-
-
-const ornamentGeo = new THREE.SphereGeometry(0.12, 16, 16);
-const ornamentColors = [0xff4444, 0xffcc00, 0x44aaff, 0xff66ff];
-
-for (let i = 0; i < 40; i++) {
-  const mat = new THREE.MeshPhongMaterial({
-    color: ornamentColors[i % ornamentColors.length],
-    emissive: 0x111111
-  });
-  const orb = new THREE.Mesh(ornamentGeo, mat);
-
-  const level = coneLevels[Math.floor(Math.random() * coneLevels.length)];
-  const radius = level.radius * 0.9;
-  const angle = Math.random() * Math.PI * 2;
-  const y = level.y + (Math.random() - 0.2) * 0.7;
-
-  orb.position.set(
-    Math.cos(angle) * radius,
-    y,
-    Math.sin(angle) * radius
-  );
-
-  tree.add(orb);
-}
